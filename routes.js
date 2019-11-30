@@ -36,11 +36,11 @@ router.get('/api', (__, res) => {
                                                                                     name,
                                                                                     symbol,
                                                                                     totalSupply: JSON.parse(totalSupply),
-                                                                                    totalSupplyDecimal: JSON.parse(totalSupply / decimalPlaces),
+                                                                                    totalSupplyFormatted: JSON.parse(totalSupply / decimalPlaces),
                                                                                     tokensMinted: JSON.parse(tokensMinted),
-                                                                                    tokensMintedDecimal: JSON.parse(tokensMinted / decimalPlaces),
+                                                                                    tokensMintedFormatted: JSON.parse(tokensMinted / decimalPlaces),
                                                                                     tokensBurned: 2100000000000000 - JSON.parse(totalSupply),
-                                                                                    tokensBurnedDecimal: 21000000 - JSON.parse(totalSupply / decimalPlaces),
+                                                                                    tokensBurnedFormatted: 21000000 - JSON.parse(totalSupply / decimalPlaces),
                                                                                     tokensBurnedPercent: ((21000000 - JSON.parse(totalSupply / decimalPlaces))/21000000),
                                                                                     contractURL: 'https://etherscan.io/address/0x26946ada5ecb57f3a1f91605050ce45c482c9eb1',
                                                                                     decimals: JSON.parse(decimals),
@@ -52,12 +52,15 @@ router.get('/api', (__, res) => {
                                                                                     epochCount: JSON.parse(epochCount),
                                                                                     rewardEra,
                                                                                     maxSupplyForEra: JSON.parse(maxSupplyForEra),
+                                                                                    maxSupplyForEraFormatted: JSON.parse(maxSupplyForEra / decimalPlaces),
                                                                                     blocksPerReadjustment: JSON.parse(blocksPerReadjustment),
                                                                                     latestDifficultyPeriodStarted: JSON.parse(latestDifficultyPeriodStarted),
                                                                                     lastRewardTo,
                                                                                     lastRewardAmount: JSON.parse(lastRewardAmount),
+                                                                                    lastRewardAmountFormatted: JSON.parse(lastRewardAmount / decimalPlaces),
                                                                                     lastRewardEthBlockNumber: JSON.parse(lastRewardEthBlockNumber),
-                                                                                    currentMiningReward: JSON.parse(currentMiningReward)
+                                                                                    currentMiningReward: JSON.parse(currentMiningReward),
+                                                                                    currentMiningRewardFormatted: JSON.parse(currentMiningReward / decimalPlaces)
                                                                                 }) 
                                                                             })
                                                                         })
